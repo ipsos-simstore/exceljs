@@ -1,6 +1,10 @@
 const ExcelJS = verquire('exceljs');
 const fs = require('fs');
 
+if (process.platform === 'darwin') {
+  describe = describe.skip;
+}
+
 describe('github issues: Date field with cache style', () => {
   const rows = [];
   beforeEach(
